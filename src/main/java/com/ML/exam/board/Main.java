@@ -51,8 +51,16 @@ public class Main {
         System.out.println("번호 / 제목 ");
         System.out.println("=================");
 
-        for (Article article : articles) {
-          System.out.printf("%d / %s\n", article.id, article.title); }
+        // for 문 이용해서 정순 출력하는 법
+        /* for (int i = 0; i < articles.size(); i++) {
+          Article article = articles.get(i);
+          System.out.printf("%d / %s\n", article.id, article.title); */
+
+        // for 문 이용해서 역순 출력하는 법
+        for (int i =articles.size() -1 ; i >= 0; i--) {
+          Article article = articles.get(i);
+          System.out.printf("%d / %s\n", article.id, article.title);
+        }
       }
       else if (cmd.equals("/usr/article/detail")) {
         if(lastArticle == null) {
